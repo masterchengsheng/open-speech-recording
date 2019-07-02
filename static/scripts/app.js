@@ -90,7 +90,7 @@ if (navigator.getUserMedia) {
       clipContainer.classList.add('clip');
       clipLabel.classList.add('clip-label');
       audio.setAttribute('controls', '');
-      deleteButton.textContent = 'Delete';
+      deleteButton.textContent = '删除';
       deleteButton.className = 'delete';
       clipLabel.textContent = clipName;
 
@@ -100,7 +100,8 @@ if (navigator.getUserMedia) {
       soundClips.appendChild(clipContainer);
 
       audio.controls = true;
-      var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+      // var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
+      var blob = new Blob(chunks, { 'type' : 'audio/wav; codecs=opus' });
       chunks = [];
       var audioURL = window.URL.createObjectURL(blob);
       audio.src = audioURL;
@@ -179,39 +180,42 @@ function visualize(stream) {
 }
 
 var wantedWords = [
-  'Zero',
-  'One',
-  'Two',
-  'Three',
-  'Four',
-  'Five',
-  'Six',
-  'Seven',
-  'Eight',
-  'Nine',
-  'On',
-  'Off',
-  'Stop',
-  'Go',
-  'Up',
-  'Down',
-  'Left',
-  'Right',
-  'Yes',
-  'No',
+  // 'Zero',
+  // 'One',
+  // 'Two',
+  // 'Three',
+  // 'Four',
+  // 'Five',
+  // 'Six',
+  // 'Seven',
+  // 'Eight',
+  // 'Nine',
+  // 'On',
+  // 'Off',
+  // 'Stop',
+  // 'Go',
+  // 'Up',
+  // 'Down',
+  // 'Left',
+  // 'Right',
+  // 'Yes',
+  // 'No',
+
+  '唐长老', '播放', '上一首','下一首','停止','关闭麦克风','再见','声音轻一点',
 ];
 
 var fillerWords = [
-  'Dog',
-  'Cat',
-  'Bird',
-  'Tree',
-  'Marvin',
-  'Sheila',
-  'House',
-  'Bed',
-  'Wow',
-  'Happy',
+  // 'Dog',
+  // 'Cat',
+  // 'Bird',
+  // 'Tree',
+  // 'Marvin',
+  // 'Sheila',
+  // 'House',
+  // 'Bed',
+  // 'Wow',
+  // 'Happy',
+  '哈哈','你好','呵呵','我喜欢',
 ];
 
 function getRecordedWords() {
