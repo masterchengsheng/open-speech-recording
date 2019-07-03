@@ -101,7 +101,7 @@ if (navigator.getUserMedia) {
 
       audio.controls = true;
       // var blob = new Blob(chunks, { 'type' : 'audio/ogg; codecs=opus' });
-      var blob = new Blob(chunks, { 'type' : 'audio/wav; codecs=opus' });
+      var blob = new Blob(chunks, { 'type' : 'audio/wav' });
       chunks = [];
       var audioURL = window.URL.createObjectURL(blob);
       audio.src = audioURL;
@@ -129,7 +129,10 @@ if (navigator.getUserMedia) {
   document.querySelector('.info-display').innerText = 
 	'Your device does not support the HTML5 API needed to record audio (this is a known problem on iOS)';  
 }
-
+/**
+ * @param {Object} stream
+ * 可视化操作
+ */
 function visualize(stream) {
   var analyser = audioCtx.createAnalyser();
   analyser.fftSize = 2048;
